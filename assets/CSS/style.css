@@ -3,13 +3,275 @@
 
 body{
   font-family: "Space Mono", "sans-serif";
-  background-color: #0d0d0d;
+  background-color: #191919;
+  color:hsl(0, 0%, 96%);
+  font-size:16px;
+}
+/*menu burger*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffe906;
+  position: fixed;
+  top:0;
+  width: 100vw;
+  padding: 10px 20px;
+  z-index: 1
+}
+.nav__list{
+  list-style: none;
+  display: none; /* Masquer le menu par défaut */
+  flex-direction: column; /* Par défaut, en colonne pour mobile */
+  position: absolute;
+  top: 43px; /* Ajustez selon la hauteur de votre nav */
+  left: 0;
+  background-color: #333;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav__list.active {
+  display: flex; /* Afficher le menu lorsque la classe active est présente */
+}
+
+
+
+.nav__list li {
+  margin: 10px 0; /* Espacement vertical pour les éléments du menu */
+}
+
+.nav__list a {
+  color: #f4f4f4;
+  text-decoration: none;
+  padding: 10px 20px; /* Ajout de padding pour un meilleur clic */
+  display: block; /* Rendre le lien cliquable sur toute la largeur */
+}
+
+.nav__menu-toggle{
+  display: flex; /* Afficher le bouton hamburger par défaut */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav__bar {
+  height: 3px;
+  width: 25px;
+  background-color: #191919;
+  margin: 3px 0;
+}
+
+/*utilities*/
+
+.about__title,.about__info-name--uppercase,.about__info-work-title--uppercase,.about__contact-title{
+  text-transform: uppercase;
+}
+
+
+  .main{
+
+  padding:20px;
+  margin-top:60px;
+}
+
+.about__title,.about__contact-title,.skills__title,.experiences__title{
+  font-weight: bold;
+  text-align: center;
+    font-size: 32px;
+    margin: 32px 0;
+  
+  
+}
+
+/*presentation*/
+.about__info{
+  display: flex;
+  flex-direction: column;
+ 
+  gap: 30px;
+  margin-bottom: 33px;
+  padding-bottom:30px;
+
 
 }
 
-h1{
- 
-  font-weight: 600;
-  font-size: 25px;
-  color:white
+.about__info,.about__social-media{
+  border-bottom: 1px dotted #ffe906;
+}
+
+
+
+.about__info-picture-wrapper{
+  display: flex;
+   justify-content: center;
+    
+}
+
+.about__info-image{
+width:50%;
+max-width: 50%;
+filter: grayscale(1);
+
+}
+
+.about__info-work-title--uppercase{
+
+  text-align: center;
+}
+
+.about__info-name{
+  font-size: 30px;
+  margin-bottom:20px;
+  text-align: center;
+
+}
+
+
+
+.about__info-work-title--uppercase{
+  margin-bottom:20px;
+  color:#ffe906;
+}
+.about__info-description{
+  line-height: 1.5;
+}
+
+.about__info-description--yellow{
+  color:#ffe906;
+
+}
+/*contact & social media*/
+.about__contact,.about__social-media{
+  display: flex;
+  flex-direction: column;
+  margin-bottom:32px
+
+
+}
+
+.about__social-media-wrapper{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 32px;
+  
+
+}
+
+.about__social-media-item{
+  width: 100%;
+  text-align: center;
+}
+
+
+.about__contact-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  font-size: 1.1rem;
+}
+
+.about__contact-item-icon{
+  width:24px;
+}
+
+.about__contact-info{
+  padding-left: 12px;
+}
+.about__contact-title,.about__social-media-title{
+ margin-bottom:10px;
+}
+.about__contact-item, .about__social-media-item {
+  padding:10px;
+}
+
+
+a{
+  color:#f4f4f4;
+  
+}
+
+
+/*Skills*/
+
+.skills__items{
+  display: flex;
+  flex-direction: column;
+
+
+  gap:20px
+  
+
+}
+
+.skill__item-wrapper {
+  display: flex;
+}
+
+.skills__item-degree{
+
+  display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+}
+.skills__item-degree-image{
+  width:10%;
+}
+.skill__item-right,.skill__item-left{
+  width:50%
+}
+
+.skill__item-title{
+  font-size :1.3rem;
+  color:#ffe906;
+  font-weight: bold;
+  margin: 24px 0;
+
+  width: 100%;
+    text-align: center;
+}
+
+p.skill__item {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+/*experiences*/
+
+.experiences{
+  border-top: 1px dotted #ffe906;
+  margin-top: 50px;
+}
+.experiences__items{
+  display: flex;
+  flex-direction: column;
+}
+.experiences__item-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+
+}
+
+.experiences__item-image{
+  width:20%;
+}
+
+.experiences__item-company{
+  font-size: 1.4rem;
+  text-align: center;
+  color:#ffe906;
+  margin-top:16px;
+
+}
+
+.experiences__item-desc-location{
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top:10px;
 }
