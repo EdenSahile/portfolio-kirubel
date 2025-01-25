@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+html,body{
+  overflow-x: hidden;
+}
 
 body{
   font-family: "Space Mono", "sans-serif";
@@ -15,9 +18,10 @@ nav {
   background-color: #ffe906;
   position: fixed;
   top:0;
-  width: 100vw;
+  width: 100%;
   padding: 10px 20px;
-  z-index: 1
+  z-index: 1;
+  height: 50px;
 }
 .nav__list{
   list-style: none;
@@ -74,7 +78,8 @@ nav {
   margin-top:60px;
 }
 
-.about__title,.about__contact-title,.skills__title,.experiences__title{
+.about__title,.about__contact-title,.skills__title,
+.experiences__title,.portfolio__title{
   font-weight: bold;
   text-align: center;
     font-size: 32px;
@@ -108,8 +113,8 @@ nav {
 }
 
 .about__info-image{
-width:50%;
-max-width: 50%;
+width:70%;
+max-width: 70%;
 filter: grayscale(1);
 
 }
@@ -274,4 +279,56 @@ p.skill__item {
   text-align: center;
   font-size: 1.2rem;
   margin-top:10px;
+}
+
+
+.portfolio{
+  width:100%
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Garde tout dans la largeur de l'écran mobile */
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider__item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider__arrow--left {
+  left: 10px;
+}
+
+.slider__arrow--right {
+  right: 10px;
 }
